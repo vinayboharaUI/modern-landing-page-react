@@ -1,0 +1,24 @@
+// 1. Variables define karein
+$primary-dark: #286f6c;
+$secondary-dark: #23262f;
+$secondary-light: #6d5dd3;
+
+// 2. Colors ka ek Map banayein
+$colors: (
+  "primary-dark": $primary-dark,
+  "secondary-dark": $secondary-dark,
+  "secondary-light": $secondary-light,
+);
+
+// 3. Loop chalayein classes generate karne ke liye
+@each $name, $value in $colors {
+  // Background classes (e.g., .bg-primary-dark)
+  .bg-#{$name} {
+    background-color: $value !important;
+  }
+
+  // Text color classes (e.g., .text-primary-dark)
+  .text-#{$name} {
+    color: $value !important;
+  }
+}
